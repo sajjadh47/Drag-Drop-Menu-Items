@@ -17,7 +17,7 @@ jQuery( document ).ready( function( $ )
 
 			$( document ).on( 'dragend', '.menu-item-title, #customlinkdiv', DNDMI.removeFakeDropArea );
 			
-			$( document ).on( 'dragover', '.fake-placeholder-for-drop', function(event){ event.preventDefault() } );
+			$( document ).on( 'dragover', '.fake-placeholder-for-drop', function( event ) { event.preventDefault() } );
 			
 			$( document ).on( 'drop', '.fake-placeholder-for-drop', DNDMI.createMenuItem );
 		},
@@ -33,7 +33,7 @@ jQuery( document ).ready( function( $ )
 				{
 					$( el ).before( DNDMI.fakeDropPlaceholder );
 				}
-			});
+			} );
 
 			DNDMI.draggedElement = e.srcElement || e.target;
 		},
@@ -88,8 +88,8 @@ jQuery( document ).ready( function( $ )
 				// now add all other hidden fields of the menu item
 				$( inputs ).each( function( index, el )
 				{    
-				    $AjaxParams[el.name] = $( el ).val();
-				});
+					$AjaxParams[el.name] = $( el ).val();
+				} );
 
 				DNDMI.callAjax( $AjaxParams , $id );
 			}
@@ -105,7 +105,7 @@ jQuery( document ).ready( function( $ )
 				menuMarkup = $.trim( menuMarkup ); // Trim leading whitespaces.
 
 				$( '#_menu_item_' + id ).replaceWith( menuMarkup );
-			});
+			} );
 		}
 	};
 
@@ -114,4 +114,4 @@ jQuery( document ).ready( function( $ )
 	{	
 		DNDMI.init();
 	}
-});
+} );
